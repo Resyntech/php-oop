@@ -1,0 +1,127 @@
+:root {
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration: 300ms;
+    --gapping: 1.5rem;
+    --round: 0.75rem;
+    --shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+
+    --black: #131414;
+    --lightblack: #1E1F20;
+    --bordercolor: #303336;
+    --gray: #62666D;
+    --white: #D1D4C9;
+    --secondary: #268DCE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    transition-timing-function: var(--ease-in-out);
+    transition-duration: var(--duration);
+}
+
+body {
+    background-color: var(--black);
+}
+
+button {
+    cursor: pointer;
+    border-radius: var(--round);
+    padding: calc(var(--gapping)*0.5) var(--gapping);
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button, .textfield {
+    box-shadow: var(--shadow);
+}
+
+.textfield {
+    position: relative;
+    z-index: 10;
+    border: 2px var(--bordercolor) solid;
+    border-radius: var(--round);
+    background-color: var(--black);
+    width: max-content;
+    color: var(--white);
+}
+
+.label {
+    text-transform: capitalize;
+    margin: var(--gapping);
+    letter-spacing: 0.025em;
+    position: absolute;
+}
+
+.inactive {
+    font-weight: 400;
+    font-size: 1.125rem;
+    z-index: -10;
+    margin: calc(var(--gapping)*0.5) var(--gapping) 0;
+}
+
+.active {
+    font-weight: 300;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    z-index: 10;
+    top: calc(var(--gapping)*-1.5);
+
+    background-color: inherit;
+    padding-top: 1px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    transition: var(--black) 5000s ease-in-out 0s;
+    -webkit-box-shadow: 0 0 1000px 1000px var(--black) inset;
+    border-radius: var(--round);
+    -webkit-text-fill-color: var(--white) !important;
+}
+
+.input {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    padding: calc(var(--gapping)*0.5) var(--gapping);
+    background-color: transparent;
+    width: max-content;
+    border: none;
+    color: var(--white);
+
+    font-weight: 400;
+    font-size: 1.125rem;
+    letter-spacing: 0.025em;
+}
+
+.bg {
+    /* height: 100vh; */
+}
+
+section, section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section form {
+    flex-direction: column;
+    gap: var(--gapping);
+    margin: var(--gapping) 0;
+}
+
+h1 {
+    color: var(--white);
+    font-size: calc(var(--gapping)*2);
+    font-weight: 400;
+}
