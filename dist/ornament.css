@@ -1,0 +1,9 @@
+.ornament {
+    display: flex !important;
+    gap: calc(var(--gapping)*0.5) !important;
+    color: var(--gray) !important;
+}
+
+.ornament a {
+    color: var(--secondary) !important;
+}

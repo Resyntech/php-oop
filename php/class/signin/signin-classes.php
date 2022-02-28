@@ -1,9 +1,9 @@
 <?php
     class Signin extends Db {
-        protected function getUser($uid, $pwd) {
-            $stmt = $this->connect()->prepare('SELECT student_pwd FROM students WHERE student_uid = ? OR student_email = ?;');
+        protected function getUser($email, $pwd) {
+            $stmt = $this->connect()->prepare('SELECT student_pwd FROM students WHERE student_email = ?;');
 
-            if (!$stmt->execute(array($uid, $pwd))) {
+            if (!$stmt->execute(array($email))) {
                 $stmt = null;
                 header("location: ../../../index.php?error=stmtfailed");
                 exit();
@@ -20,9 +20,8 @@
                 return exit();
             }
 
-            $stmt = $this->connect()->prepare('SELECT * FROM students WHERE student_uid = ? OR student_email = ?
-            AND student_pwd = ?;');
-            if (!$stmt->execute(array($uid, $uid, $pwd))) {
+            $stmt = $this->connect()->prepare('SELECT * FROM students WHERE student_email = ?;');
+            if (!$stmt->execute(array($email))) {
                 $stmt = null;
                 header("location: ../../../index.php?error=stmtfailed");
                 exit();
@@ -30,10 +29,10 @@
             $this->statementLength($stmt);
 
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+            
             session_start();
-            $_SESSION["userid"] = $user[0]["student_id"];
-            $_SESSION["useruid"] = $user[0]["student_uid"];
+            $_SESSION["studentnumber"] = $user[0]["student_id"];
+            $_SESSION["studentemail"] = $user[0]["student_email"];
             
             $stmt = null;
         }

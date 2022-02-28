@@ -1,10 +1,10 @@
 <?php
     class SigninController extends Signin {
-        private $uid;
+        private $email;
         private $pwd;
 
-        public function __construct($uid, $pwd) {
-            $this->uid = $uid;
+        public function __construct($email, $pwd) {
+            $this->email = $email;
             $this->pwd = $pwd;
         }
 
@@ -15,12 +15,12 @@
                     exit();
                 }
 
-            $this->getUser($this->uid, $this->pwd);
+            $this->getUser($this->email, $this->pwd);
         }
 
         // ERROR HANDLERS
         private function isInputEmpty() {
-            if (empty($this->uid) || empty($this->pwd))
+            if (empty($this->email) || empty($this->pwd))
                 return false;
             return true;
         }

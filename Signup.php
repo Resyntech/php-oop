@@ -2,12 +2,15 @@
 <html lang="en">
     <?php
         session_start();
-        include './head.php';
+        include './php/head.php';
         SEO("Sign Up", "This is Sign Up");
     ?>
-    <body>
-        <?php include './Header.php'; ?>
-        <div class="bg">
+<?php
+    if (isset($_SESSION['studentnumber'])) {
+        header("location: index.php?signined=true");
+    } else
+?>
+        <body>
             <section>
                 <form id="signupForm" method="POST" action="./php/class/signup/signup.php">
                     <script src="./js/components/signupTextfields.js"></script>
@@ -15,10 +18,10 @@
                         <p>Already registered?</p>
                         <a href='./Signin.php'>Sign In</a>
                     </div>
-                    <button type="submit" name="submit">Sign Up</button>
+                    <button class="button-primary" type="submit" name="submit">Sign Up</button>
                 </form>
             </section>
-        </div>
-        <?php include './Footer.php'; ?>
-    </body>
+        </body>
 </html>
+<link rel="stylesheet" href="./ornament.css" />
+<link rel="stylesheet" href="./form.css" />

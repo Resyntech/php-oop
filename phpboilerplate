@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <?php
+        session_start();
+        include './php/head.php';
+        SEO("Page", "This is Page");
+    ?>
+<?php
+    if (isset($_SESSION['studentnumber']))
+        header("location: index.php?signined=true");
+    else
+?>
+        <body>
+            <?php include './php/components/Header.php'; ?>
+            <div class="bg">
+                <section>
+                    <p>Page</p>
+                </section>
+            </div>
+            <?php include './php/components/Footer.php'; ?>
+        </body>
+</html>
