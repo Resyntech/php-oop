@@ -74,6 +74,7 @@
 </html>
 <style>
     section {
+        flex-direction: column;
         padding: var(--gapping) 0;
     }
     .first, .second {
@@ -95,9 +96,9 @@
     .data p {
         color: var(--gray);
     }
-    /* .data {
-        width: 80vw;
-    } */
+    .data {
+        background-color: red;
+    }
     .data, section, form {
         display: flex;
         justify-content: center;

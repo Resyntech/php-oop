@@ -23,5 +23,5 @@
             </section>
         </body>
 </html>
-<link rel="stylesheet" href="./ornament.css" />
-<link rel="stylesheet" href="./form.css" />
+<link rel="stylesheet" href="./dist/ornament.css" />
+<link rel="stylesheet" href="./dist/form.css" />
