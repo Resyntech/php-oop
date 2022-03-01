@@ -20,14 +20,14 @@
                 </div>
                 <h3>Student number: <?php echo $_SESSION['studentnumber']; ?></h3>
                 <h3>Email: <?php echo $_SESSION['studentemail']; ?></h3>
-                <a href="./php/signout.php" class="button-error">Sign Out</a>
+                <a href="./php/signout.php" class="button-error btn">Sign Out</a>
             </div>
         <?php
             } else {
         ?>
             <div>
-                <a href="Signin.php" class="button-outlined">Sign In</a>
-                <a href="Signup.php" class="button-outlined">Sign Up</a>
+                <a href="Signin.php" class="button-outlined btn">Sign In</a>
+                <a href="Signup.php" class="button-outlined btn">Sign Up</a>
             </div>
         <?php
             }
@@ -105,6 +105,9 @@
         justify-content: center;
         align-items: center;
         gap: var(--gapping);
+    }
+    .dashboard h1 {
+        font-size: 2rem;
     }
     .dashboard > div {
         background-color: var(--white);

@@ -70,7 +70,7 @@ button {
     transform: scale(1.2);
 }
 
-button, a, .textfield {
+button, .btn, .textfield {
     box-shadow: var(--shadow);
 }
 

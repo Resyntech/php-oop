@@ -1,4 +1,4 @@
-let grConcat = '<h1>Get your Grades</h1>'
+let grConcat = '<h1>Get your Grades: </h1>'
 const grForm = document.querySelector('#gradesForm')
 // const grNames = []
 // const grTypes = []
@@ -17,5 +17,11 @@ const grForm = document.querySelector('#gradesForm')
 //             onfocus="document.querySelector('${'#'+grNames[index]+grTypes[index]}').classList.replace('inactive', 'active')" />
 //     </div>`
 // }
+
+grConcat += `<select name='sem'>
+    <option value="1st">First Semester</option>
+    <option value="2nd">Second Semester</option>
+    <option value="all">All Semester</option>
+</select>`
 
 grForm.innerHTML = grConcat
